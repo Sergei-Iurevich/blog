@@ -26,7 +26,6 @@ function clear() {
   return del("src/main");
 }
 
-
 function img() {
   return src("src/media/img/**.jpg").pipe(dest("main/media/img"));
 }

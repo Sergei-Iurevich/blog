@@ -42,7 +42,7 @@
     }
   },
   "lint-staged": {
-    "*.{css,md,yml}": "prettier --write",
-    "*.css": "stylelint --fix"
+    "*.{scss,md,yml}": "prettier --write",
+    "*.scss": "stylelint --fix"
   }
 }
