@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp build",
+    "build": "gulp build",
     "serve": "gulp serve",
-    "build": "webpack",
-    "dev": "webpack serve"
+    "lint": "prettier --check . && stylelint \"**/*.scss\"",
+    "lint:fix": "prettier --write . && stylelint \"**/*.scss\" --fix"
   },
   "repository": {
     "type": "git",
@@ -23,28 +23,26 @@
   "homepage": "https://github.com/Sergei-Iurevich/blog#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14",
-    "browser-sync-webpack-plugin": "^2.3.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^5.2.0",
-    "cssnano": "^4.1.10",
     "del": "^6.0.0",
-    "file-loader": "^6.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.3.0",
     "gulp-sass": "^4.1.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.4.0",
-    "postcss": "^8.2.8",
-    "postcss-import": "^14.0.0",
-    "postcss-loader": "^5.2.0",
-    "postcss-preset-env": "^6.7.0",
+    "prettier": "2.2.1",
     "sass": "^1.32.8",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-scss": "^3.19.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,md,yml}": "prettier --write",
+    "*.css": "stylelint --fix"
   }
 }
