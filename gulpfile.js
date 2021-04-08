@@ -26,9 +26,6 @@ function clear() {
   return del("src/main");
 }
 
-function js() {
-  return src("src/index.js").pipe(dest("main"));
-}
 
 function img() {
   return src("src/media/img/**.jpg").pipe(dest("main/media/img"));
@@ -43,5 +40,5 @@ function serve() {
   watch("src/style/scss/**.scss", series(scss)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, js, img);
-exports.serve = series(clear, scss, html, js, img, serve);
+exports.build = series(clear, scss, html, img);
+exports.serve = series(clear, scss, html, img, serve);
