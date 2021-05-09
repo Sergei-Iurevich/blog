@@ -13,28 +13,39 @@
   </head>
   <body>
     <div class="page">
-      <div class="page-header">
-  <header class="header">
-    <div class="header__row1">
-      <nav class="nav">
-        <p>
-          <a href="index.html" class="nav__link">Главная</a>
-          <a href="blog.html" class="nav__link">Блог</a>
-          <a href="articles.html" class="nav__link">Статьи</a>
-          <a href="videos.html" class="nav__link">Видео</a>
-          <a href="#" class="nav__link">Подкасты</a>
-        </p>
+      <header class="header">
+  <div class="header__container">
+    <div class="header__body">
+      <div class="header__burger">
+        <span class="header__span"></span>
+      </div>
+
+      <h1 class="header__site-name">IT BLOG</h1>
+
+      <div class="search">
+        <input class="search__input" />
+        <div class="search__button">найти</div>
+      </div>
+
+      <nav class="header__menu">
+        <div class="header__list">
+          <a href="index.html" class="header__a">Главная</a>
+          <a href="blog.html" class="header__a">Блог</a>
+          <a href="articles.html" class="header__a">Статьи</a>
+          <a href="videos.html" class="header__a">Видео</a>
+          <a href="#" class="header__a">Подкасты</a>
+        </div>
       </nav>
     </div>
-    <div class="header__row2">
-      <div class="heading">
-        <h1 class="heading__h1">IT BLOG</h1>
-        <input class="heading__input" />
-        <button class="heading__button">найти</button>
-      </div>
+  </div>
+  <div class="header__bottom">
+    <div class="header__row">
+      <h1 class="header__h1">IT BLOG</h1>
+      <input class="header__input" />
+      <button class="header__button">найти</button>
     </div>
-  </header>
-</div>
+  </div>
+</header>
  <main class="videos">
   <h1 class="h1">Видео</h1>
   <div class="pagenumber">
@@ -205,18 +216,21 @@
 </main>
 
       <footer class="footer">
-  <p class="footer__copyright">
-    Copyright ©
-    <span itemprop="copyrightYear">2021</span>
-    <span itemprop="copyrightHolder">Halt and Catch Fire</span>
-  </p>
-  <p class="footer__about">
-    <a class="footer__link" href="about.html">О блоге</a> -
-    <a class="footer__link" href="policy.html">Ссылки</a> -
-    <a class="footer__link" href="contact.html">Обратная связь</a>
-  </p>
+  <div class="footer__container">
+    <p class="footer__copyright">
+      Copyright ©
+      <span itemprop="copyrightYear">2021</span>
+      <span itemprop="copyrightHolder">Halt and Catch Fire</span>
+    </p>
+    <p class="footer__about">
+      <a class="footer__link" href="about.html">О блоге</a> -
+      <a class="footer__link" href="policy.html">Ссылки</a> -
+      <a class="footer__link" href="contact.html">Обратная связь</a>
+    </p>
+  </div>
 </footer>
 
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
