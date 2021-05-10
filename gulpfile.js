@@ -1,7 +1,7 @@
 const { src, dest, series, watch } = require("gulp");
 const sass = require("gulp-sass");
 const include = require("gulp-file-include");
-const concat = require("gulp-concat");
+// const concat = require("gulp-concat");
 const del = require("del");
 const sync = require("browser-sync").create();
 
@@ -16,10 +16,11 @@ function html() {
 }
 
 function scss() {
-  return src("src/style/scss/**.scss")
-    .pipe(sass())
-    .pipe(concat("index.css"))
-    .pipe(dest("main"));
+  return src("src/style/scss/index.scss").pipe(sass()).pipe(dest("main"));
+}
+
+function js() {
+  return src("src/js/index.js").pipe(dest("main"));
 }
 
 function clear() {
@@ -37,7 +38,8 @@ function serve() {
 
   watch("src/html/**/**.html", series(html)).on("change", sync.reload);
   watch("src/style/scss/**.scss", series(scss)).on("change", sync.reload);
+  watch("src/js/**.js", series(js)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, img);
-exports.serve = series(clear, scss, html, img, serve);
+exports.build = series(clear, scss, html, js, img);
+exports.serve = series(clear, scss, html, js, img, serve);
